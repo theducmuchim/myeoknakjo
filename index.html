@@ -280,7 +280,7 @@ footer .fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
     <div class="wrap">
       <div class="bagbox">
         <h2>주문 목록.</h2>
-        <p class="lede">담은 교재와 할인이 자동으로 계산됩니다.</p>
+        <p class="lede">담은 교재와 할인이 자동으로 계산됩니다. 복사한 내용을 DM으로 보내 주세요.</p>
         <ul class="olist" id="olist"></ul>
         <div class="sum">
           <div><span>모의고사 <span id="nE" class="num">0</span>회</span><span id="sE" class="num">0원</span></div>
@@ -291,7 +291,7 @@ footer .fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
         <div class="hint" id="hint" hidden></div>
         <div class="bagact">
           <button class="pill" id="copyBtn" type="button">주문 내용 복사</button>
-          <a class="pill ghost" id="askBtn" href="#guide">구매 문의하기</a>
+          <a class="pill ghost" id="askBtn" href="#guide">DM으로 문의하기</a>
         </div>
         <div class="bagfoot"><span class="toast" id="toast" role="status"></span><button id="clearBtn" type="button">목록 비우기</button></div>
       </div>
@@ -301,10 +301,10 @@ footer .fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   <section class="guide" id="guide">
     <div class="wrap">
       <h2>구매는 간단하게.</h2>
-      <p class="lede">별도 결제 페이지 없이 문의로 주문합니다.</p>
+      <p class="lede">별도 결제 페이지 없이 DM으로 주문합니다.</p>
       <ol class="steps">
         <li><h3>담고 복사하기</h3><p>원하는 교재를 담고 ‘주문 내용 복사’를 누르면 합계까지 복사됩니다.</p></li>
-        <li><h3>문의 남기기</h3><p>‘구매 문의하기’에서 복사한 내용을 붙여 넣어 보내 주세요.</p></li>
+        <li><h3>DM 보내기</h3><p>복사한 주문 내용을 DM으로 보내 주세요. 구매 문의는 DM으로만 받습니다.</p></li>
         <li><h3>입금 후 받기</h3><p>입금 안내에 따라 송금하시면 확인 후 교재 파일을 보내 드립니다.</p></li>
       </ol>
       <p class="lede" id="contactLine" style="margin:30px 0 0;font-size:14px"></p>
@@ -317,7 +317,8 @@ footer .fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
     <li>모든 교재는 개인 학습용입니다. 무단 복제, 공유, 재판매를 금지합니다.</li>
     <li>미리보기는 일부만 공개되며, 전체 내용은 구매 후 확인하실 수 있습니다.</li>
     <li>묶음 가격은 모의고사끼리, 문제집끼리 각각 적용됩니다.</li>
-    <li>유형별 기출은 문제편과 해설편이 한 세트로 제공됩니다. 체험판은 문의 시 무료로 보내 드립니다.</li>
+    <li>유형별 기출은 문제편과 해설편이 한 세트로 제공됩니다. 체험판은 DM으로 요청하시면 무료로 보내 드립니다.</li>
+    <li>구매 및 기타 문의는 DM으로 받습니다.</li>
   </ol>
   <div class="fb"><span>멱낳조 · 하진수 인공지능 수학 시리즈</span><span>씨마스 『인공지능 수학』 교과서 범위 기준</span></div>
 </div></footer>
@@ -369,7 +370,7 @@ for (const [id, name, kicker, desc, pg, pv, list] of B) P.push({ id, cat: 'book'
   spec: [['범위', '교과서 Ⅰ~Ⅴ 전 단원'], ['분량', pg], ['구성', '개념 정리 포함']], list });
 P.push({ id: 'trial', cat: 'book', free: true, name: '체험판', kicker: '무료', desc: '난이도와 개념을 섞은 12쪽 맛보기.', cover: 'img/c_trial.jpg',
   pages: [['img/c_trial.jpg', '표지'], ['img/p_trial_1.jpg', '본문'], ['img/p_trial_2.jpg', '본문']],
-  spec: [['분량', '12쪽'], ['구성', '여러 단원 · 난이도 혼합']], list: ['구매 전 교재 스타일 확인용', '정답과 해설 포함', '문의 시 무료로 보내 드립니다'] });
+  spec: [['분량', '12쪽'], ['구성', '여러 단원 · 난이도 혼합']], list: ['구매 전 교재 스타일 확인용', '정답과 해설 포함', 'DM으로 요청하시면 무료로 보내 드립니다'] });
 
 const won = n => n.toLocaleString('ko-KR') + '원';
 const $ = id => document.getElementById(id);
@@ -384,7 +385,7 @@ function card(p) {
   el.innerHTML = `<div class="kicker">${p.kicker || ''}</div><h3>${p.name}</h3><div class="desc">${p.desc}</div>
     <button class="cv" type="button" data-open="${p.id}" aria-label="${p.name} 미리보기"><img src="${p.cover}" alt="${p.name} 표지" loading="lazy"></button>
     <div class="row"><div class="p">${p.free ? '<b>무료</b>' : `<b class="num">${won(p.price || 3000)}</b><br><span style="color:var(--sub);font-size:12px">${note}</span>`}</div>
-    ${p.free ? `<a class="pill sm ghost" href="#guide">문의 시 제공</a>` : `<button class="pill sm" type="button" data-add="${p.id}"></button>`}</div>
+    ${p.free ? `<a class="pill sm ghost" href="#guide">DM으로 요청</a>` : `<button class="pill sm" type="button" data-add="${p.id}"></button>`}</div>
     <button class="more" type="button" data-open="${p.id}">미리보기</button>`;
   return el;
 }
@@ -450,11 +451,11 @@ function toast(m) { $('toast').textContent = m; clearTimeout(tt); tt = setTimeou
 $('copyBtn').addEventListener('click', () => {
   const s = orderText(); if (!s) return toast('먼저 교재를 담아 주세요.');
   const fb = () => { const ta = document.createElement('textarea'); ta.value = s; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select();
-    let ok = false; try { ok = document.execCommand('copy'); } catch (e) {} ta.remove(); toast(ok ? '주문 내용을 복사했습니다.' : '복사가 막혀 있습니다. 목록을 직접 적어 보내 주세요.'); };
-  try { navigator.clipboard.writeText(s).then(() => toast('주문 내용을 복사했습니다.'), fb); } catch (e) { fb(); }
+    let ok = false; try { ok = document.execCommand('copy'); } catch (e) {} ta.remove(); toast(ok ? '복사했습니다. DM으로 보내 주세요.' : '복사가 막혀 있습니다. 목록을 직접 적어 보내 주세요.'); };
+  try { navigator.clipboard.writeText(s).then(() => toast('복사했습니다. DM으로 보내 주세요.'), fb); } catch (e) { fb(); }
 });
 if (CONTACT_URL) { const a = $('askBtn'); a.href = CONTACT_URL; a.target = '_blank'; a.rel = 'noopener'; $('contactLine').innerHTML = `문의: <a href="${CONTACT_URL}" target="_blank" rel="noopener">${CONTACT_URL}</a>`; }
-else $('contactLine').textContent = '문의 채널 주소는 곧 안내해 드립니다.';
+else $('contactLine').textContent = '모든 구매 문의는 DM으로 보내 주세요.';
 
 let mId = null, mIdx = 0;
 const modal = $('modal');
@@ -473,7 +474,7 @@ function openModal(id) {
 }
 function syncModalBtn() {
   const p = P.find(x => x.id === mId), b = $('mAdd');
-  if (p.free) { b.textContent = '문의 시 무료 제공'; b.disabled = true; return; }
+  if (p.free) { b.textContent = 'DM으로 요청하면 무료 제공'; b.disabled = true; return; }
   b.disabled = false; const on = cart.has(p.id); b.textContent = on ? '주문 목록에서 빼기' : '주문 목록에 담기'; b.classList.toggle('on', on);
 }
 function show(i) {
