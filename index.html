@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="하진수 인공지능 수학 모의고사·문제집. 모의고사 3,000원(3회 8,000원), 문제집 3,000원(3권 7,000원).">
+<meta name="description" content="하진수 인공지능 수학 문제집. 1권 3,000원, 3권 7,000원. 이벤트: 개념 집약 + 유형별 기출 + 변형 200제 택1 6,000원. 문제집 3권 구매 시 모의고사 증정.">
 <meta property="og:title" content="멱낳조">
 <meta property="og:description" content="하진수 인공지능 수학. 개념부터 실전 모의고사까지.">
 <meta property="og:image" content="/img/c_concept.jpg">
@@ -154,6 +154,13 @@ button{font:inherit;cursor:pointer;letter-spacing:inherit}
 .bagfoot{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:14px}
 .bagfoot button{border:0;background:none;color:var(--link);padding:0;font-size:14px}
 .toast{color:var(--blue);font-size:14px;min-height:20px}
+.notice{background:#fff;border-radius:14px;padding:14px 18px;font-size:14px;margin:-6px 0 20px;max-width:760px}
+.notice b{color:var(--blue);margin-right:8px}
+.card.off{opacity:.55}
+.card.off .cv img{filter:grayscale(1)}
+.badge{white-space:nowrap;font-size:12px;font-weight:600;border-radius:999px;padding:5px 12px;background:#E8E8ED;color:var(--ink)}
+.badge.gift{background:#E8F1FD;color:var(--blue)}
+.ribbon b{color:var(--blue);margin-right:6px}
 @media (max-width:560px){.bagact{grid-template-columns:1fr}}
 
 /* guide */
@@ -207,7 +214,7 @@ footer .fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   <a class="bag" href="#bag" aria-label="주문 목록"><svg width="15" height="17" viewBox="0 0 15 17" fill="none" aria-hidden="true"><path d="M2 5.5h11l-.8 10H2.8L2 5.5Z" stroke="#1D1D1F" stroke-width="1.2"/><path d="M5 7V4a2.5 2.5 0 0 1 5 0v3" stroke="#1D1D1F" stroke-width="1.2"/></svg><b id="cartCount" class="num z"></b></a>
 </div></nav>
 
-<div class="ribbon">모의고사 3회 8,000원, 문제집 3권 7,000원. <a href="#compare">가격 살펴보기 ›</a></div>
+<div class="ribbon"><b>이벤트</b> 개념 집약 + 유형별 기출 + 변형 200제 택1, 3권 6,000원. 문제집 3권 사면 모의고사 3회분 증정. <a href="#compare">자세히 보기 ›</a></div>
 
 <main id="top">
   <section class="hero">
@@ -225,15 +232,15 @@ footer .fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   <div class="tiles">
     <section class="tile dark">
       <h2>예상 모의고사</h2>
-      <p>학교 시험지 그대로. 실전처럼.</p>
-      <div class="price">1회 3,000원 · 3회 8,000원</div>
-      <div class="ctas"><a class="pill sm" href="#exam">구입하기</a><button class="pill ghost sm" type="button" data-open="e1">미리보기</button></div>
-      <div class="shot"><img src="img/c_e1.jpg" alt="예상문제 제1회 문제지"><img src="img/c_e2.jpg" alt="예상문제 제2회 문제지"></div>
+      <p>문제집 3권 사면 3회분 증정.</p>
+      <div class="price">제1·3·4회 · 쉬운 난이도<br>제2·5회는 출제 방식을 반영해 재편 중입니다.</div>
+      <div class="ctas"><a class="pill sm" href="#book">문제집 고르기</a><button class="pill ghost sm" type="button" data-open="e1">미리보기</button></div>
+      <div class="shot"><img src="img/c_e1.jpg" alt="예상문제 제1회 문제지"><img src="img/c_e3.jpg" alt="예상문제 제3회 문제지"></div>
     </section>
     <section class="tile">
       <h2>문제집</h2>
       <p>모든 문제집에 개념 정리 포함.</p>
-      <div class="price">1권 3,000원 · 3권 7,000원</div>
+      <div class="price">1권 3,000원 · 3권 7,000원 · 이벤트 세트 6,000원</div>
       <div class="ctas"><a class="pill sm" href="#book">구입하기</a><button class="pill ghost sm" type="button" data-open="concept">미리보기</button></div>
       <div class="shot"><img src="img/c_concept.jpg" alt="개념 집약 표지"><img src="img/c_v2.jpg" alt="변형 200제 Ver.2 표지"></div>
     </section>
@@ -251,13 +258,14 @@ footer .fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
       </div>
       <div class="cat" id="exam" data-cat="exam">
         <h3 class="cat-h">예상 모의고사</h3>
-        <p class="cat-sub">학교 시험지 양식 · 23문항 100점 · 해설 포함. 3회 8,000원.</p>
+        <p class="cat-sub">따로 판매하지 않고, 문제집 3권 이상 구매 시 함께 드립니다.</p>
+        <div class="notice"><b>공지</b> 증정 모의고사 제1·3·4회는 쉬운 난이도입니다. 제2·5회는 출제 방식을 반영해 재편 중이며, 새로 만들어 다시 안내드리겠습니다.</div>
         <div class="rail" id="gExam"></div>
         <div class="rail-nav"><button type="button" data-scroll="gExam" data-d="-1" aria-label="이전">‹</button><button type="button" data-scroll="gExam" data-d="1" aria-label="다음">›</button></div>
       </div>
       <div class="cat" id="book" data-cat="book">
         <h3 class="cat-h">문제집</h3>
-        <p class="cat-sub">모든 문제집 개념 포함. 아무거나 3권 7,000원.</p>
+        <p class="cat-sub">모든 문제집 개념 포함. 아무거나 3권 7,000원. 개념 집약 + 유형별 기출 + 변형 200제 택1은 6,000원.</p>
         <div class="rail" id="gBook"></div>
         <div class="rail-nav"><button type="button" data-scroll="gBook" data-d="-1" aria-label="이전">‹</button><button type="button" data-scroll="gBook" data-d="1" aria-label="다음">›</button></div>
       </div>
@@ -266,12 +274,12 @@ footer .fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   <section class="compare" id="compare">
     <div class="wrap">
-      <h2>많이 담을수록 가볍게.</h2>
-      <p class="lede">3개씩 묶으면 자동으로 할인됩니다.</p>
+      <h2>세 권이면 더 가볍게.</h2>
+      <p class="lede">담으면 할인과 증정이 자동으로 적용됩니다.</p>
       <div class="cols">
-        <div class="col"><div class="big num">3,000<small>원</small></div><div class="what">모의고사 또는 문제집 1개</div><div class="fine">어떤 교재든 낱개 가격은 같습니다.</div></div>
-        <div class="col"><div class="big num">8,000<small>원</small></div><div class="what">모의고사 3회</div><div class="fine">제1회~제5회 중 아무거나 3회.</div><span class="save">1,000원 절약</span></div>
-        <div class="col"><div class="big num">7,000<small>원</small></div><div class="what">문제집 3권</div><div class="fine">개념 집약, 개념&amp;스킬, 기출, 변형 200제 중 3권.</div><span class="save">2,000원 절약</span></div>
+        <div class="col"><div class="big num">6,000<small>원</small></div><div class="what">이벤트 세트</div><div class="fine">개념 집약 + 유형별 기출 + 변형 200제 Ver.1·2·3 중 1권.</div><span class="save">3,000원 절약</span></div>
+        <div class="col"><div class="big num">7,000<small>원</small></div><div class="what">문제집 아무거나 3권</div><div class="fine">낱권은 3,000원. 3권마다 7,000원으로 계산됩니다.</div><span class="save">2,000원 절약</span></div>
+        <div class="col"><div class="big num">0<small>원</small></div><div class="what">모의고사 3회분 증정</div><div class="fine">문제집 3권 이상 구매 시 제1·3·4회. 쉬운 난이도입니다.</div><span class="save">함께 드림</span></div>
       </div>
     </div>
   </section>
@@ -283,9 +291,9 @@ footer .fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
         <p class="lede">담은 교재와 할인이 자동으로 계산됩니다. 복사한 내용을 DM으로 보내 주세요.</p>
         <ul class="olist" id="olist"></ul>
         <div class="sum">
-          <div><span>모의고사 <span id="nE" class="num">0</span>회</span><span id="sE" class="num">0원</span></div>
           <div><span>문제집 <span id="nB" class="num">0</span>권</span><span id="sB" class="num">0원</span></div>
-          <div class="disc" id="discRow" hidden><span>묶음 할인</span><span id="sD" class="num"></span></div>
+          <div class="disc" id="discRow" hidden><span id="dLabel">할인</span><span id="sD" class="num"></span></div>
+          <div><span>모의고사 제1·3·4회</span><span id="sGift">문제집 3권부터 증정</span></div>
           <div class="total"><span>합계</span><span id="sT" class="num">0원</span></div>
         </div>
         <div class="hint" id="hint" hidden></div>
@@ -316,7 +324,8 @@ footer .fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   <ol>
     <li>모든 교재는 개인 학습용입니다. 무단 복제, 공유, 재판매를 금지합니다.</li>
     <li>미리보기는 일부만 공개되며, 전체 내용은 구매 후 확인하실 수 있습니다.</li>
-    <li>묶음 가격은 모의고사끼리, 문제집끼리 각각 적용됩니다.</li>
+    <li>이벤트 세트(6,000원)는 개념 집약, 유형별 기출, 변형 200제 Ver.1·2·3 중 1권으로 구성됩니다. 나머지 문제집은 3권 7,000원, 낱권 3,000원으로 계산됩니다.</li>
+    <li>모의고사는 따로 판매하지 않으며 문제집 3권 이상 구매 시 제1·3·4회(쉬운 난이도)를 드립니다. 제2·5회는 출제 방식을 반영해 재편 중입니다.</li>
     <li>유형별 기출은 문제편과 해설편이 한 세트로 제공됩니다. 체험판은 DM으로 요청하시면 무료로 보내 드립니다.</li>
     <li>구매 및 기타 문의는 DM으로 받습니다.</li>
   </ol>
@@ -350,13 +359,15 @@ footer .fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 /* 구매 문의 링크(카카오톡 오픈채팅 등)를 넣으면 '구매 문의하기'가 그 주소로 연결됩니다. */
 const CONTACT_URL = '';
 
-const RULE = { exam: { unit: 3000, bundle: 8000, label: '모의고사', u: '회' }, book: { unit: 3000, bundle: 7000, label: '문제집', u: '권' } };
+const EVENT = { price: 6000, need: ['concept', 'gichul'], pick: ['v1', 'v2', 'v3'] };
+const GIFT = ['e1', 'e3', 'e4'];
 const P = [];
-for (let i = 1; i <= 5; i++) P.push({ id: 'e' + i, cat: 'exam', name: `예상문제 제${i}회`, kicker: i === 1 ? '먼저 풀어 보기 좋은 회차' : '',
-  desc: '선택형 19 + 서답형 4. 학교 시험지 양식과 해설.', cover: `img/c_e${i}.jpg`,
+for (let i = 1; i <= 5; i++) { const remake = i === 2 || i === 5; P.push({ id: 'e' + i, cat: 'exam', name: `예상문제 제${i}회`, status: remake ? 'remake' : 'gift',
+  kicker: remake ? '재편 중' : '쉬운 난이도 · 증정',
+  desc: remake ? '출제 방식을 반영해 다시 만들고 있습니다.' : '문제집 3권 이상 구매 시 함께 드립니다.', cover: `img/c_e${i}.jpg`,
   pages: [[`img/c_e${i}.jpg`, '문제지 1쪽'], [`img/p_e${i}_1.jpg`, '문제지 2쪽'], [`img/p_e${i}_2.jpg`, '해설']],
   spec: [['범위', '교과서 Ⅰ~Ⅴ 전 단원'], ['분량', `문제지 ${[8, 9, 8, 8, 9][i - 1]}쪽 + 해설 3쪽`], ['문항', '23문항 · 100점']],
-  list: ['OMR·답안란이 있는 실제 학교 시험지 양식', '보기형·계산형·서답형 고르게 배치', '정답표와 문항별 해설'] });
+  list: ['OMR·답안란이 있는 실제 학교 시험지 양식', '쉬운 난이도 회차', '정답표와 문항별 해설', '문제집 3권 이상 구매 시 증정'] }); }
 const B = [
   ['concept', '개념 집약', '추천', '개념을 확실히 세우는 핵심 정리와 확인 문제.', '98쪽', [['p_concept_1', '본문'], ['p_concept_2', '본문'], ['p_concept_3', '단원 도입']], ['절마다 정의·핵심 공식·예제', 'O/X 개념 점검과 확인 문제', '교과서 단원 순서 그대로']],
   ['skill', '개념 & 스킬', '', '개념을 문제로 연결하는 풀이 도구 모음.', '68쪽', [['p_skill_1', '본문'], ['p_skill_2', '본문'], ['p_skill_3', '단원 도입']], ['스킬별 한 쪽 정리와 적용 예시', '추적표·순서도·행렬 계산 요령', '단원별 핵심 스킬 미리보기']],
@@ -375,28 +386,41 @@ P.push({ id: 'trial', cat: 'book', free: true, name: '체험판', kicker: '무�
 const won = n => n.toLocaleString('ko-KR') + '원';
 const $ = id => document.getElementById(id);
 let cart = new Set();
-try { JSON.parse(localStorage.getItem('mny-cart') || '[]').forEach(id => P.some(p => p.id === id && !p.free) && cart.add(id)); } catch (e) {}
+try { JSON.parse(localStorage.getItem('mny-cart') || '[]').forEach(id => P.some(p => p.id === id && !p.free && p.cat === 'book') && cart.add(id)); } catch (e) {}
 const save = () => { try { localStorage.setItem('mny-cart', JSON.stringify([...cart])); } catch (e) {} };
 
 function card(p) {
   const el = document.createElement('article');
   el.className = 'card'; el.dataset.id = p.id;
-  const note = p.free ? '' : (p.cat === 'exam' ? '3회 8,000원' : '3권 7,000원');
+  if (p.cat === 'exam') {
+    const off = p.status === 'remake'; if (off) el.classList.add('off');
+    el.innerHTML = `<div class="kicker">${p.kicker}</div><h3>${p.name}</h3><div class="desc">${p.desc}</div>
+      <button class="cv" type="button" ${off ? 'disabled' : `data-open="${p.id}"`} aria-label="${p.name} 미리보기"><img src="${p.cover}" alt="${p.name} 표지" loading="lazy"></button>
+      <div class="row"><div class="p"><b>${off ? '준비 중' : '증정'}</b><br><span style="color:var(--sub);font-size:12px">${off ? '새로 만들어 다시 안내드립니다' : '문제집 3권 이상 구매 시'}</span></div>
+      <span class="badge ${off ? '' : 'gift'}">${off ? '재편 중' : '증정용'}</span></div>
+      ${off ? '' : `<button class="more" type="button" data-open="${p.id}">미리보기</button>`}`;
+    return el;
+  }
+  const ev = [...EVENT.need, ...EVENT.pick].includes(p.id);
+  const note = p.free ? '' : (ev ? '3권 7,000원 · 이벤트 대상' : '3권 7,000원');
   el.innerHTML = `<div class="kicker">${p.kicker || ''}</div><h3>${p.name}</h3><div class="desc">${p.desc}</div>
     <button class="cv" type="button" data-open="${p.id}" aria-label="${p.name} 미리보기"><img src="${p.cover}" alt="${p.name} 표지" loading="lazy"></button>
-    <div class="row"><div class="p">${p.free ? '<b>무료</b>' : `<b class="num">${won(p.price || 3000)}</b><br><span style="color:var(--sub);font-size:12px">${note}</span>`}</div>
+    <div class="row"><div class="p">${p.free ? '<b>무료</b>' : `<b class="num">${won(3000)}</b><br><span style="color:var(--sub);font-size:12px">${note}</span>`}</div>
     ${p.free ? `<a class="pill sm ghost" href="#guide">DM으로 요청</a>` : `<button class="pill sm" type="button" data-add="${p.id}"></button>`}</div>
     <button class="more" type="button" data-open="${p.id}">미리보기</button>`;
   return el;
 }
 P.forEach(p => (p.cat === 'exam' ? $('gExam') : $('gBook')).appendChild(card(p)));
 
-function part(cat) {
-  const items = P.filter(p => !p.free && p.cat === cat && cart.has(p.id)), r = RULE[cat], n = items.length;
-  const raw = n * r.unit, sum = Math.floor(n / 3) * r.bundle + (n % 3) * r.unit;
-  return { items, n, raw, sum, disc: raw - sum };
+function calc() {
+  const items = P.filter(p => p.cat === 'book' && !p.free && cart.has(p.id)), n = items.length;
+  let ev = null;
+  if (EVENT.need.every(id => cart.has(id))) { const v = EVENT.pick.find(id => cart.has(id)); if (v) ev = [...EVENT.need, v]; }
+  const rest = items.filter(p => !(ev && ev.includes(p.id))), m = rest.length;
+  const bundles = Math.floor(m / 3), total = (ev ? EVENT.price : 0) + bundles * 7000 + (m % 3) * 3000;
+  const raw = n * 3000;
+  return { items, n, ev, rest, bundles, raw, total, disc: raw - total, gift: n >= 3 };
 }
-function calc() { const e = part('exam'), b = part('book'); return { e, b, disc: e.disc + b.disc, total: e.sum + b.sum }; }
 
 function render() {
   const c = calc();
@@ -406,19 +430,23 @@ function render() {
     b.textContent = on ? '담김' : '담기'; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on);
     b.closest('.card').classList.toggle('sel', on);
   });
-  const items = [...c.e.items, ...c.b.items];
-  $('olist').innerHTML = items.length ? items.map(p => `<li><span>${p.cat === 'exam' ? '모의고사 · ' : '문제집 · '}${p.name}</span><em class="num">${won(3000)}</em><button type="button" data-rm="${p.id}">삭제</button></li>`).join('')
-    : `<li class="empty">아직 담은 교재가 없습니다. <a href="#store">교재 살펴보기 ›</a></li>`;
-  $('nE').textContent = c.e.n; $('nB').textContent = c.b.n;
-  $('sE').textContent = won(c.e.raw); $('sB').textContent = won(c.b.raw);
+  const rows = c.items.map(p => `<li><span>문제집 · ${p.name}${c.ev && c.ev.includes(p.id) ? ' <span style="color:var(--blue);font-size:12px">이벤트 세트</span>' : ''}</span><em class="num">${won(3000)}</em><button type="button" data-rm="${p.id}">삭제</button></li>`);
+  if (c.gift) rows.push(`<li><span>증정 · 모의고사 제1·3·4회 <span style="color:var(--sub);font-size:12px">쉬운 난이도</span></span><em>0원</em><span style="width:28px"></span></li>`);
+  $('olist').innerHTML = rows.length ? rows.join('') : `<li class="empty">아직 담은 교재가 없습니다. <a href="#store">교재 살펴보기 ›</a></li>`;
+  $('nB').textContent = c.n; $('sB').textContent = won(c.raw);
   $('discRow').hidden = !c.disc; $('sD').textContent = '−' + won(c.disc);
+  $('dLabel').textContent = c.ev ? (c.bundles ? '이벤트 세트 + 묶음 할인' : '이벤트 세트 할인') : '3권 묶음 할인';
+  $('sGift').textContent = c.gift ? '증정' : '문제집 3권부터 증정';
   $('sT').textContent = won(c.total);
   const tips = [];
-  for (const [k, x] of [['exam', c.e], ['book', c.b]]) {
-    const r = x.n % 3; if (!x.n || !r) continue;
-    const R = RULE[k], need = 3 - r, extra = R.bundle - r * R.unit;
-    tips.push(`${R.label} <b>${need}${R.u}</b>만 더 담으면 3${R.u} ${won(R.bundle)}. 지금보다 ${won(extra)}만 추가됩니다.`);
+  const hasNeed = EVENT.need.filter(id => cart.has(id)).length, hasPick = EVENT.pick.some(id => cart.has(id));
+  if (!c.ev && (hasNeed || (hasPick && c.n < 3))) {
+    const miss = [...(cart.has('concept') ? [] : ['개념 집약']), ...(cart.has('gichul') ? [] : ['유형별 기출']), ...(hasPick ? [] : ['변형 200제 1권'])];
+    tips.push(`<b>${miss.join(', ')}</b>만 더 담으면 이벤트 세트 6,000원이 적용됩니다.`);
   }
+  const r = c.rest.length % 3;
+  if (c.rest.length && r && c.ev) tips.push(`이벤트 세트 외 문제집 <b>${3 - r}권</b>을 더 담으면 3권 7,000원이 적용됩니다.`);
+  if (!c.gift && c.n) tips.push(`문제집 <b>${3 - c.n}권</b>을 더 담으면 모의고사 제1·3·4회를 함께 드립니다.`);
   $('hint').hidden = !tips.length; $('hint').innerHTML = tips.join('<br>');
   if (mId) syncModalBtn();
   save();
@@ -440,9 +468,9 @@ $('clearBtn').addEventListener('click', () => { cart.clear(); render(); toast('�
 function orderText() {
   const c = calc(); if (!cart.size) return '';
   const L = ['[멱낳조 주문 문의]'];
-  c.e.items.forEach(p => L.push(`- 모의고사 ${p.name} 3,000원`));
-  c.b.items.forEach(p => L.push(`- 문제집 ${p.name} 3,000원`));
-  if (c.disc) L.push(`묶음 할인 −${won(c.disc)}`);
+  c.items.forEach(p => L.push(`- 문제집 ${p.name}${c.ev && c.ev.includes(p.id) ? ' (이벤트 세트)' : ''}`));
+  if (c.disc) L.push(`할인 −${won(c.disc)}${c.ev ? ' (이벤트 세트 6,000원 적용)' : ''}`);
+  if (c.gift) L.push('증정: 모의고사 제1·3·4회');
   L.push(`합계 ${won(c.total)}`);
   return L.join('\n');
 }
@@ -464,8 +492,8 @@ function openModal(id) {
   mId = id; mIdx = 0;
   $('mKick').textContent = p.cat === 'exam' ? '예상 모의고사' : (p.free ? '무료 체험판' : '문제집');
   $('mTitle').textContent = p.name;
-  $('mPrice').textContent = p.free ? '무료' : won(3000);
-  $('mPriceNote').textContent = p.free ? '' : (p.cat === 'exam' ? '모의고사 3회 8,000원' : '문제집 3권 7,000원');
+  $('mPrice').textContent = p.free ? '무료' : (p.cat === 'exam' ? '증정' : won(3000));
+  $('mPriceNote').textContent = p.free ? '' : (p.cat === 'exam' ? '문제집 3권 이상 구매 시 함께 드립니다' : ([...EVENT.need, ...EVENT.pick].includes(p.id) ? '3권 7,000원 · 이벤트 세트 6,000원 대상' : '문제집 3권 7,000원'));
   $('mSpec').innerHTML = p.spec.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
   $('mList').innerHTML = p.list.map(x => `<li>${x}</li>`).join('');
   $('mDots').innerHTML = p.pages.map((pg, i) => `<button type="button" data-i="${i}" aria-label="${pg[1]}"></button>`).join('');
@@ -475,6 +503,7 @@ function openModal(id) {
 function syncModalBtn() {
   const p = P.find(x => x.id === mId), b = $('mAdd');
   if (p.free) { b.textContent = 'DM으로 요청하면 무료 제공'; b.disabled = true; return; }
+  if (p.cat === 'exam') { b.textContent = '문제집 3권 구매 시 증정'; b.disabled = true; return; }
   b.disabled = false; const on = cart.has(p.id); b.textContent = on ? '주문 목록에서 빼기' : '주문 목록에 담기'; b.classList.toggle('on', on);
 }
 function show(i) {
